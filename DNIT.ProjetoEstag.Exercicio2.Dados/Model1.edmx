@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Prova_EstagModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Prova_EstagModelStoreContainer">
+          <EntitySet Name="ESTADO_CIVIL" EntityType="Prova_EstagModel.Store.ESTADO_CIVIL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SEXO" EntityType="Prova_EstagModel.Store.SEXO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USUARIO" EntityType="Prova_EstagModel.Store.USUARIO" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_USUARIO_ESTADO_CIVIL" Association="Prova_EstagModel.Store.FK_USUARIO_ESTADO_CIVIL">
+            <End Role="ESTADO_CIVIL" EntitySet="ESTADO_CIVIL" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_SEXO" Association="Prova_EstagModel.Store.FK_USUARIO_SEXO">
+            <End Role="SEXO" EntitySet="SEXO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ESTADO_CIVIL">
+          <Key>
+            <PropertyRef Name="ID_ESTADO_CIVIL" />
+          </Key>
+          <Property Name="ID_ESTADO_CIVIL" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DS_ESTADO_CIVIL" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SEXO">
+          <Key>
+            <PropertyRef Name="ID_SEXO" />
+          </Key>
+          <Property Name="ID_SEXO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DS_SEXO" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DS_USUARIO" Type="varchar" MaxLength="50" />
+          <Property Name="ID_SEXO" Type="int" />
+          <Property Name="ID_ESTADO_CIVIL" Type="int" />
+        </EntityType>
+        <Association Name="FK_USUARIO_ESTADO_CIVIL">
+          <End Role="ESTADO_CIVIL" Type="Prova_EstagModel.Store.ESTADO_CIVIL" Multiplicity="0..1" />
+          <End Role="USUARIO" Type="Prova_EstagModel.Store.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_CIVIL">
+              <PropertyRef Name="ID_ESTADO_CIVIL" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ID_ESTADO_CIVIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_SEXO">
+          <End Role="SEXO" Type="Prova_EstagModel.Store.SEXO" Multiplicity="0..1" />
+          <End Role="USUARIO" Type="Prova_EstagModel.Store.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXO">
+              <PropertyRef Name="ID_SEXO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ID_SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Prova_EstagModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Prova_EstagEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ESTADO_CIVIL" EntityType="Prova_EstagModel.ESTADO_CIVIL" />
+          <EntitySet Name="SEXO" EntityType="Prova_EstagModel.SEXO" />
+          <EntitySet Name="USUARIO" EntityType="Prova_EstagModel.USUARIO" />
+          <AssociationSet Name="FK_USUARIO_ESTADO_CIVIL" Association="Prova_EstagModel.FK_USUARIO_ESTADO_CIVIL">
+            <End Role="ESTADO_CIVIL" EntitySet="ESTADO_CIVIL" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_SEXO" Association="Prova_EstagModel.FK_USUARIO_SEXO">
+            <End Role="SEXO" EntitySet="SEXO" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ESTADO_CIVIL">
+          <Key>
+            <PropertyRef Name="ID_ESTADO_CIVIL" />
+          </Key>
+          <Property Name="ID_ESTADO_CIVIL" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DS_ESTADO_CIVIL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="USUARIO" Relationship="Prova_EstagModel.FK_USUARIO_ESTADO_CIVIL" FromRole="ESTADO_CIVIL" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="SEXO">
+          <Key>
+            <PropertyRef Name="ID_SEXO" />
+          </Key>
+          <Property Name="ID_SEXO" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DS_SEXO" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="USUARIO" Relationship="Prova_EstagModel.FK_USUARIO_SEXO" FromRole="SEXO" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DS_USUARIO" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ID_SEXO" Type="Int32" />
+          <Property Name="ID_ESTADO_CIVIL" Type="Int32" />
+          <NavigationProperty Name="ESTADO_CIVIL" Relationship="Prova_EstagModel.FK_USUARIO_ESTADO_CIVIL" FromRole="USUARIO" ToRole="ESTADO_CIVIL" />
+          <NavigationProperty Name="SEXO" Relationship="Prova_EstagModel.FK_USUARIO_SEXO" FromRole="USUARIO" ToRole="SEXO" />
+        </EntityType>
+        <Association Name="FK_USUARIO_ESTADO_CIVIL">
+          <End Role="ESTADO_CIVIL" Type="Prova_EstagModel.ESTADO_CIVIL" Multiplicity="0..1" />
+          <End Role="USUARIO" Type="Prova_EstagModel.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_CIVIL">
+              <PropertyRef Name="ID_ESTADO_CIVIL" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ID_ESTADO_CIVIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIO_SEXO">
+          <End Role="SEXO" Type="Prova_EstagModel.SEXO" Multiplicity="0..1" />
+          <End Role="USUARIO" Type="Prova_EstagModel.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXO">
+              <PropertyRef Name="ID_SEXO" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ID_SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Prova_EstagModelStoreContainer" CdmEntityContainer="Prova_EstagEntities">
+          <EntitySetMapping Name="ESTADO_CIVIL">
+            <EntityTypeMapping TypeName="Prova_EstagModel.ESTADO_CIVIL">
+              <MappingFragment StoreEntitySet="ESTADO_CIVIL">
+                <ScalarProperty Name="ID_ESTADO_CIVIL" ColumnName="ID_ESTADO_CIVIL" />
+                <ScalarProperty Name="DS_ESTADO_CIVIL" ColumnName="DS_ESTADO_CIVIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEXO">
+            <EntityTypeMapping TypeName="Prova_EstagModel.SEXO">
+              <MappingFragment StoreEntitySet="SEXO">
+                <ScalarProperty Name="ID_SEXO" ColumnName="ID_SEXO" />
+                <ScalarProperty Name="DS_SEXO" ColumnName="DS_SEXO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="Prova_EstagModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="DS_USUARIO" ColumnName="DS_USUARIO" />
+                <ScalarProperty Name="ID_SEXO" ColumnName="ID_SEXO" />
+                <ScalarProperty Name="ID_ESTADO_CIVIL" ColumnName="ID_ESTADO_CIVIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

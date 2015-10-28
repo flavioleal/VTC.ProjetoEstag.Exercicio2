@@ -1,0 +1,10 @@
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\bin\Debug\DNIT.ProjetoEstag.Exercicio2.Dados.dll.config
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\bin\Debug\DNIT.ProjetoEstag.Exercicio2.Dados.dll
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\bin\Debug\DNIT.ProjetoEstag.Exercicio2.Dados.pdb
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\bin\Debug\EntityFramework.dll
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\bin\Debug\EntityFramework.xml
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\obj\Debug\DNIT.ProjetoEstag.Exercicio2.Dados.csprojResolveAssemblyReference.cache
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\obj\Debug\DNIT.ProjetoEstag.Exercicio2.Dados.dll
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\obj\Debug\DNIT.ProjetoEstag.Exercicio2.Dados.pdb
+C:\Users\flavio.leal\Documents\Visual Studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\flavio.leal\Documents\Visual Studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Dados\bin\Debug\EntityFramework.SqlServer.xml

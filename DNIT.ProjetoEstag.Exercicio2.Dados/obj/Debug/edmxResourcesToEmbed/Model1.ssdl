@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Prova_EstagModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Prova_EstagModelStoreContainer">
+    <EntitySet Name="ESTADO_CIVIL" EntityType="Prova_EstagModel.Store.ESTADO_CIVIL" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SEXO" EntityType="Prova_EstagModel.Store.SEXO" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USUARIO" EntityType="Prova_EstagModel.Store.USUARIO" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_USUARIO_ESTADO_CIVIL" Association="Prova_EstagModel.Store.FK_USUARIO_ESTADO_CIVIL">
+      <End Role="ESTADO_CIVIL" EntitySet="ESTADO_CIVIL" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_SEXO" Association="Prova_EstagModel.Store.FK_USUARIO_SEXO">
+      <End Role="SEXO" EntitySet="SEXO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ESTADO_CIVIL">
+    <Key>
+      <PropertyRef Name="ID_ESTADO_CIVIL" />
+    </Key>
+    <Property Name="ID_ESTADO_CIVIL" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DS_ESTADO_CIVIL" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SEXO">
+    <Key>
+      <PropertyRef Name="ID_SEXO" />
+    </Key>
+    <Property Name="ID_SEXO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DS_SEXO" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DS_USUARIO" Type="varchar" MaxLength="50" />
+    <Property Name="ID_SEXO" Type="int" />
+    <Property Name="ID_ESTADO_CIVIL" Type="int" />
+  </EntityType>
+  <Association Name="FK_USUARIO_ESTADO_CIVIL">
+    <End Role="ESTADO_CIVIL" Type="Prova_EstagModel.Store.ESTADO_CIVIL" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Prova_EstagModel.Store.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_CIVIL">
+        <PropertyRef Name="ID_ESTADO_CIVIL" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_ESTADO_CIVIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_SEXO">
+    <End Role="SEXO" Type="Prova_EstagModel.Store.SEXO" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Prova_EstagModel.Store.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEXO">
+        <PropertyRef Name="ID_SEXO" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_SEXO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

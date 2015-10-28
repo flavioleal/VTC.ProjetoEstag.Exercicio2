@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Prova_EstagModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Prova_EstagEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="ESTADO_CIVIL" EntityType="Prova_EstagModel.ESTADO_CIVIL" />
+    <EntitySet Name="SEXO" EntityType="Prova_EstagModel.SEXO" />
+    <EntitySet Name="USUARIO" EntityType="Prova_EstagModel.USUARIO" />
+    <AssociationSet Name="FK_USUARIO_ESTADO_CIVIL" Association="Prova_EstagModel.FK_USUARIO_ESTADO_CIVIL">
+      <End Role="ESTADO_CIVIL" EntitySet="ESTADO_CIVIL" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_SEXO" Association="Prova_EstagModel.FK_USUARIO_SEXO">
+      <End Role="SEXO" EntitySet="SEXO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ESTADO_CIVIL">
+    <Key>
+      <PropertyRef Name="ID_ESTADO_CIVIL" />
+    </Key>
+    <Property Name="ID_ESTADO_CIVIL" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DS_ESTADO_CIVIL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="USUARIO" Relationship="Prova_EstagModel.FK_USUARIO_ESTADO_CIVIL" FromRole="ESTADO_CIVIL" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="SEXO">
+    <Key>
+      <PropertyRef Name="ID_SEXO" />
+    </Key>
+    <Property Name="ID_SEXO" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DS_SEXO" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="USUARIO" Relationship="Prova_EstagModel.FK_USUARIO_SEXO" FromRole="SEXO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DS_USUARIO" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ID_SEXO" Type="Int32" />
+    <Property Name="ID_ESTADO_CIVIL" Type="Int32" />
+    <NavigationProperty Name="ESTADO_CIVIL" Relationship="Prova_EstagModel.FK_USUARIO_ESTADO_CIVIL" FromRole="USUARIO" ToRole="ESTADO_CIVIL" />
+    <NavigationProperty Name="SEXO" Relationship="Prova_EstagModel.FK_USUARIO_SEXO" FromRole="USUARIO" ToRole="SEXO" />
+  </EntityType>
+  <Association Name="FK_USUARIO_ESTADO_CIVIL">
+    <End Role="ESTADO_CIVIL" Type="Prova_EstagModel.ESTADO_CIVIL" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Prova_EstagModel.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_CIVIL">
+        <PropertyRef Name="ID_ESTADO_CIVIL" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_ESTADO_CIVIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_SEXO">
+    <End Role="SEXO" Type="Prova_EstagModel.SEXO" Multiplicity="0..1" />
+    <End Role="USUARIO" Type="Prova_EstagModel.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEXO">
+        <PropertyRef Name="ID_SEXO" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_SEXO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

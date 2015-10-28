@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Prova_EstagModelStoreContainer" CdmEntityContainer="Prova_EstagEntities">
+    <EntitySetMapping Name="ESTADO_CIVIL">
+      <EntityTypeMapping TypeName="Prova_EstagModel.ESTADO_CIVIL">
+        <MappingFragment StoreEntitySet="ESTADO_CIVIL">
+          <ScalarProperty Name="ID_ESTADO_CIVIL" ColumnName="ID_ESTADO_CIVIL" />
+          <ScalarProperty Name="DS_ESTADO_CIVIL" ColumnName="DS_ESTADO_CIVIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEXO">
+      <EntityTypeMapping TypeName="Prova_EstagModel.SEXO">
+        <MappingFragment StoreEntitySet="SEXO">
+          <ScalarProperty Name="ID_SEXO" ColumnName="ID_SEXO" />
+          <ScalarProperty Name="DS_SEXO" ColumnName="DS_SEXO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="Prova_EstagModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="DS_USUARIO" ColumnName="DS_USUARIO" />
+          <ScalarProperty Name="ID_SEXO" ColumnName="ID_SEXO" />
+          <ScalarProperty Name="ID_ESTADO_CIVIL" ColumnName="ID_ESTADO_CIVIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

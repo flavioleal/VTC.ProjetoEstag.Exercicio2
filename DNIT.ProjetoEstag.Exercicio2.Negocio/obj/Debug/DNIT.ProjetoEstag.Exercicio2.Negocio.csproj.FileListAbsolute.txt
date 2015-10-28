@@ -1,0 +1,12 @@
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\DNIT.ProjetoEstag.Exercicio2.Negocio.dll
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\DNIT.ProjetoEstag.Exercicio2.Negocio.pdb
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\obj\Debug\DNIT.ProjetoEstag.Exercicio2.Negocio.csprojResolveAssemblyReference.cache
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\obj\Debug\DNIT.ProjetoEstag.Exercicio2.Negocio.dll
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\obj\Debug\DNIT.ProjetoEstag.Exercicio2.Negocio.pdb
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\DNIT.ProjetoEstag.Exercicio2.Dados.dll
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\EntityFramework.dll
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\DNIT.ProjetoEstag.Exercicio2.Dados.pdb
+c:\users\flavio.leal\documents\visual studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\EntityFramework.xml
+C:\Users\flavio.leal\Documents\Visual Studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\DNIT.ProjetoEstag.Exercicio2.Negocio.dll.config
+C:\Users\flavio.leal\Documents\Visual Studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\flavio.leal\Documents\Visual Studio 2012\Projects\DNIT.ProjetoEstag.Exercicio2\DNIT.ProjetoEstag.Exercicio2.Negocio\bin\Debug\EntityFramework.SqlServer.xml
