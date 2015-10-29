@@ -34,6 +34,7 @@
     <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
     &nbsp;<asp:Button ID="btnLimpar" runat="server" Text="limpar" OnClick="btnLimpar_Click" />
     <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
+    <asp:Button ID="btnDeletar" runat="server" Text="Deletar" OnClick="btnDeletar_Click" />
     <br />
     <asp:Label ID="Label2" runat="server" Style="color:red"></asp:Label>
 
@@ -42,6 +43,7 @@
             <asp:BoundField DataField="Nome" HeaderText="Usuario" />
             <asp:BoundField DataField="Sexo" HeaderText="Sexo" />
             <asp:BoundField DataField="EstadoCivil" HeaderText="Estado Civil" />
+
         </Columns>
     </asp:GridView>
 

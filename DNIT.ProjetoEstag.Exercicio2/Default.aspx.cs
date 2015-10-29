@@ -232,5 +232,10 @@ namespace DNIT.ProjetoEstag.Exercicio2
 
 
         }
+
+        protected void btnDeletar_Click(object sender, EventArgs e)
+        {
+            usuarioBO.Deletar(txtNome.Text);
+        }
     }
 }
