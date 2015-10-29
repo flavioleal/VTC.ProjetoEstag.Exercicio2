@@ -103,15 +103,6 @@ namespace DNIT.ProjetoEstag.Exercicio2 {
         protected global::System.Web.UI.WebControls.Button btnPesquisar;
         
         /// <summary>
-        /// btnDeletar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeletar;
-        
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>

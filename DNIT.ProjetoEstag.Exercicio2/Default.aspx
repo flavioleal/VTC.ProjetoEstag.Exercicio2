@@ -31,19 +31,28 @@
               
             </asp:RadioButtonList> &nbsp;<asp:Label ID="lblEstado" runat="server" Style="color:red"></asp:Label>           
             </div>
-    <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
-    &nbsp;<asp:Button ID="btnLimpar" runat="server" Text="limpar" OnClick="btnLimpar_Click" />
-    <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
-    <asp:Button ID="btnDeletar" runat="server" Text="Deletar" OnClick="btnDeletar_Click" />
+    <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" ToolTip ="Clique para salvar" />
+    &nbsp;<asp:Button ID="btnLimpar" runat="server" Text="limpar" OnClick="btnLimpar_Click" ToolTip="Clique para limpar"/>
+    <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" ToolTip="Clique para pesquisar" />
     <br />
     <asp:Label ID="Label2" runat="server" Style="color:red"></asp:Label>
 
-    <asp:GridView ID="gdvResultado" runat="server" Width="426px" AutoGenerateColumns="false">
+    <asp:GridView ID="gdvResultado" runat="server" Width="426px" AutoGenerateColumns="false" OnRowCommand="">
         <Columns>
             <asp:BoundField DataField="Nome" HeaderText="Usuario" />
             <asp:BoundField DataField="Sexo" HeaderText="Sexo" />
             <asp:BoundField DataField="EstadoCivil" HeaderText="Estado Civil" />
+            <asp:TemplateField HeaderText="Alterar">
+                <ItemTemplate>
+                    <asp:ImageButton ID="imgAlterar" runat="server" ImageUrl="~/Images/imgAlterar.jpg" ToolTip="Clique para alterar"  Width="15px" Height="15px"/>
 
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Deletar">
+                <ItemTemplate>
+                    <asp:ImageButton ID="imgDeletar" runat="server" ImageUrl="~/Images/imgDeletar.jpg" ToolTip="Clique para deletar" Width="15px" Height="15px" />
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
 
